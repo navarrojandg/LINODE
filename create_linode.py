@@ -5,6 +5,14 @@ API_KEY = params['API_KEY']
 AUTH_USER = params['AUTH_USER']
 AUTH_PASS = params['AUTH_PASS']
 
+class NewProxy():
+    def __init__(self, region, ltype):
+        self.client = LinodeClient(API_KEY)
+        self.region = region
+        self.ltype = ltype
+        self.image = "linode/ubuntu16.04lts"
+        self.stackscript = 68166
+
 
 class NewProxy():
     def __init__(self):
