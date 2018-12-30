@@ -22,6 +22,7 @@ class NewProxy():
                 "squid_password":"{}".format(AUTH_PASS)
             }
         )
+        print('{}:3128:{}:{}'.format(new_linode.ipv4[0], AUTH_USER, AUTH_PASS))
         with open('LINODE PROXY LIST.txt', 'a+') as f:
             f.write('{}:{}:{}:{}\n'.format(
                 new_linode.ipv4[0],
@@ -31,7 +32,6 @@ class NewProxy():
             ))
         with open('LINODE PROXY PASSWORDS.txt', 'a+') as f:
             f.write('{} \t{}\n'.format(new_linode.ipv4[0], password))
-        return '{}:3128:{}:{}'.format(new_linode.ipv4[0], AUTH_USER, AUTH_PASS)
 
 
 def set_region():
@@ -57,6 +57,4 @@ if __name__ == '__main__':
         proxylist.append(NewProxy(region, ltype))
     pool = ThreadPool()
     proxies = pool.map(lambda x: x.create(), proxylist)
-    for p in proxies:
-        print(p)
     print("Proxy list has been exported to LINODE PROXY LIST.txt")
