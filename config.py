@@ -1,7 +1,7 @@
 params = {
-    'API_KEY': 'SET LINODE API KEY HERE',
-    'AUTH_USER': 'SET SQUID USER NAME HERE',
-    'AUTH_PASS': 'SET SQUID PASSWORD HERE'
+    'API_KEY': 'INSERT API KEY HERE',
+    'AUTH_USER': 'us3r',
+    'AUTH_PASS': 'p4ss'
 }
 protected_linodes = ['SET LINODE NAMES HERE AS LIST']
 
