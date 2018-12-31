@@ -1,6 +1,7 @@
 from linode_api4 import LinodeClient
 from config import params
 from multiprocessing.dummy import Pool as ThreadPool
+import os
 
 
 class NewProxy():
@@ -51,6 +52,8 @@ if __name__ == '__main__':
     count = int(input("How many proxies would you like to create? "))
     region = set_region()
     print("CREATING {} | {} PROXIES PLEASE WAIT".format(count, region))
+    os.remove("LINODE PROXY LIST.txt")
+    os.remove("LINODE PROXY PASSWORDS.txt")
     ltype = LinodeClient(API_KEY).linode.types()[0]
     proxylist = []
     for i in range(count):
